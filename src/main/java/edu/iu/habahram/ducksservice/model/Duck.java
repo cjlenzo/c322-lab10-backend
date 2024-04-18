@@ -45,8 +45,6 @@ public abstract class Duck {
         this.type = type;
     }
 
-
-
     public int[] performFly(int[] positionBefore) {
         return flyBehavior.fly(positionBefore);
     }
