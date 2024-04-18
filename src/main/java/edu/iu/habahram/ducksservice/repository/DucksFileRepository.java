@@ -14,7 +14,6 @@ import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class DucksFileRepository {
     public DucksFileRepository() {
         File ducksImagesDirectory = new File("ducks/images");
@@ -42,8 +41,8 @@ public class DucksFileRepository {
         List<DuckData> ducks = findAll();
         int maxId = 0;
         for (int i = 0; i < ducks.size(); i++) {
-            if (ducks.get(i).id() > maxId) {
-                maxId = ducks.get(i).id();
+            if (ducks.get(i).getId() > maxId) {
+                maxId = ducks.get(i).getId();
             }
         }
         int id = maxId + 1;
@@ -111,7 +110,7 @@ public class DucksFileRepository {
     public DuckData find(int id) throws IOException {
         List<DuckData> ducks = findAll();
         for(DuckData duck : ducks) {
-            if (duck.id() == id) {
+            if (duck.getId() == id) {
                 return duck;
             }
         }
@@ -121,7 +120,7 @@ public class DucksFileRepository {
         List<DuckData> ducks = findAll();
         List<DuckData> result = new ArrayList<>();
         for(DuckData duck : ducks) {
-            if (type != null && !duck.type().equalsIgnoreCase(type)) {
+            if (type != null && !duck.getType().equalsIgnoreCase(type)) {
                 continue;
             }
             result.add(duck);
