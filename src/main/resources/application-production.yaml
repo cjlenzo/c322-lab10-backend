@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgres://spring2024_customer:z1UGVMvXAsOckxt4zMIvE96ptl3oYhgh@dpg-cogm9ufsc6pc73ceovj0-a.ohio-postgres.render.com/spring2024_database_3w03
+    username: spring2024_customer
+    password: z1UGVMvXAsOckxt4zMIvE96ptl3oYhgh
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  sql:
+    init:
+      mode: always
